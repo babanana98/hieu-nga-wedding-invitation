@@ -1,0 +1,119 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+:root {
+  --font-s1-pc: 31.25px;
+  --font-s2-pc: 25px;
+  --font-s3-pc: 20px;
+  --font-body-pc: 16px;
+  --font-s1-sp: 25.39px;
+  --font-s2-sp: 20.31px;
+  --font-s3-sp: 16.25px;
+  --font-body-sp: 13px;
+  --font-family__pinyon-script: "Pinyon Script";
+  --font-family__piazzolla: "Piazzolla";
+  --popup-background-color: rgba(217, 217, 217, 0.7);
+  --img-gap: 20px;
+}
+.font-family__pinyon-script {
+  font-family: var(--font-family__pinyon-script);
+}
+.font-family__piazzolla {
+  font-family: var(--font-family__piazzolla);
+}
+.font-size__s1 {
+  font-size: var(--font-s1-sp);
+}
+.font-size__s2 {
+  font-size: var(--font-s2-sp);
+}
+.font-size__s3 {
+  font-size: var(--font-s3-sp);
+}
+.font-size__body {
+  font-size: var(--font-body-sp);
+}
+
+/* Mobile first styles */
+body {
+  margin: 0;
+  font-family: var(--font-family__piazzolla), Arial, sans-serif;
+  color: #422A1C;
+}
+/* Header Styles */
+header {
+  position: sticky;
+  top: 0;
+  padding: 0 20px;
+  border-bottom: 1px solid #8D311C;;
+  background-color: #fff;
+  display: flex;
+  flex-direction: row;
+  gap: 4px;
+}
+.header--invitation-link {
+  color: #8D311C;
+  text-decoration: none;
+  padding: 10px 6px;
+  display: inline-block;
+  font-weight: 600;
+}
+.header--invitation-link__selected {
+  background-color: #8D311C;
+  color: #fff;
+  border-radius: 6px 6px 0 0;
+}
+/* Page title Styles */
+.page-title {
+  text-align: center;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.page-title--font {
+  color: #8D311C;
+  text-align: center;
+}
+
+/* Tablet styles */
+@media (min-width: 601px) {
+  .agenda {
+    text-align: center;
+    padding: 0 200px;
+  }
+}
+
+/* PC styles */
+@media (min-width: 1201px) {
+  .font-size__s1 {
+    font-size: var(--font-s1-pc);
+  }
+  .font-size__s2 {
+    font-size: var(--font-s2-pc);
+  }
+  .font-size__s3 {
+    font-size: var(--font-s3-pc);
+  }
+  .font-size__body {
+    font-size: var(--font-body-pc);
+  }
+  .time-item.left {
+    font-size: var(--font-s3-pc);
+  }
+  .time-item.right {
+    font-size: var(--font-s3-pc);
+  }
+  .agenda {
+    text-align: center;
+    padding: 0 400px;
+  }
+  .time-item.left {
+    font-size: var(--font-s3-pc);
+  }
+  .time-item.right {
+    font-size: var(--font-s3-pc);
+  }
+}
