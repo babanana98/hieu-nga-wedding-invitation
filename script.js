@@ -15,8 +15,8 @@ window.onload = function () {
   guestNameElement.innerHTML = guestName;
 
   // setting guest role
-  const guestRole = getRequiredQueryParamOrElse(GUEST_ROLE_QUERY_PARAM, "SAME");
-  guestRoleElement.innerHTML = Role[guestRole];
+  const guestRole = getRequiredQueryParamOrElse(GUEST_ROLE_QUERY_PARAM, "chúng tôi");
+  guestRoleElement.innerHTML = guestRole;
 
   // setting message
   const agree = localStorage.getItem("result");
@@ -77,15 +77,4 @@ function getRequiredQueryParamOrElse(param, defaultVal) {
 function settingMessage(agree) {
   statusElement.innerHTML = agree ? "Cảm ơn bạn đã xác nhận sẽ tham dự!" : "Thật tiếc bạn đã xác nhận không thể tham dự.<br/>Hy vọng sẽ gặp bạn trong dịp khác!";
   statusElement.className = agree ? "success-message" : "warning-message";
-}
-
-const Role = {
-  BA : "Bà",
-  ONG : "Ông",
-  CO_CHU : "cô chú",
-  BAC : "bác",
-  ANH_CHI : "anh chị",
-  CHUNG_TOI : "chúng tôi",
-  EM : "em",
-  CHAU : "cháu"
 }

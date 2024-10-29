@@ -11,7 +11,7 @@ const albumLinkElement = document.getElementById('albumLink');
 window.onload = function () {
   // setting album link
   const guestName = getRequiredQueryParamOrElse(GUEST_NAME_QUERY_PARAM, "Quý khách");
-  const guestRole = getRequiredQueryParamOrElse(GUEST_ROLE_QUERY_PARAM, "SAME");
+  const guestRole = getRequiredQueryParamOrElse(GUEST_ROLE_QUERY_PARAM, "chúng tôi");
   invitationLinkElement.href = invitationLinkElement.href + "?" + "role=" + guestRole + "&guest=" + guestName;
   albumLinkElement.href = albumLinkElement.href + "?" + "role=" + guestRole + "&guest=" + guestName;
 };
