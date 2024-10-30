@@ -52,6 +52,7 @@ header {
   display: flex;
   flex-direction: row;
   gap: 4px;
+  z-index: 1000;
 }
 .header--invitation-link {
   color: #8D311C;

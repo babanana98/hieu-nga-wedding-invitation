@@ -13,7 +13,7 @@
   --font-family__pinyon-script: "Pinyon Script";
   --font-family__piazzolla: "Piazzolla";
   --popup-background-color: rgba(217, 217, 217, 0.7);
-  --img-gap: 20px;
+  --img-gap: 30px;
 }
 .font-family__pinyon-script {
   font-family: var(--font-family__pinyon-script);
@@ -49,6 +49,7 @@ header {
   display: flex;
   flex-direction: row;
   gap: 4px;
+  z-index: 1000;
 }
 .header--invitation-link {
   color: #8D311C;
@@ -81,14 +82,38 @@ header {
   flex-direction: column;
   gap: var(--img-gap);
   padding: var(--img-gap);
-  align-items: flex-start;
+  justify-content: center;
+  align-items: center;
 }
-.gallery-image {
+.card {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 10px 10px 0;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, .3);
+}
+.card:nth-child(odd) {
+  transform: rotate(3deg);
+}
+.card:nth-child(even) {
+  transform: rotate(-3deg);
+}
+.card-image {
   width: 100%;
   height: auto;
   cursor: pointer;
-  border-radius: 5px;
+  border-radius: 10px;
   transition: transform 0.2s ease;
+}
+.card-caption {
+  width: 100%;
+  margin: 0;
+  padding: 16px 0;
+  color: #333;
 }
 /* Popup Styles */
 .image-popup {
@@ -132,9 +157,12 @@ header {
 @media (min-width: 601px) {
   .gallery {
     flex-direction: row;
-    padding: var(--img-gap) 0 var(--img-gap) var(--img-gap);
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: calc(20px + var(--img-gap));
+    padding: calc(20px + var(--img-gap));
   }
-  .gallery-image {
+  .card {
     width: calc(50% - var(--img-gap));
   }
   .popup-image {
@@ -156,8 +184,12 @@ header {
   .font-size__body {
     font-size: var(--font-body-pc);
   }
-  .gallery-image {
-    width: calc(20% - var(--img-gap));
+  .gallery {
+    gap: calc(40px + var(--img-gap));
+    padding: calc(40px + var(--img-gap));
+  }
+  .card {
+    width: calc(32% - var(--img-gap));
   }
   .popup-image {
     width: 60%;

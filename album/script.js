@@ -6,7 +6,7 @@ const GUEST_NAME_QUERY_PARAM = "guest";
 const GUEST_ROLE_QUERY_PARAM = "role";
 
 // JavaScript for handling image popup, zoom, and drag
-const galleryImages = document.querySelectorAll('.gallery-image');
+const galleryImages = document.querySelectorAll('.card-image');
 const imagePopup = document.getElementById('image-popup');
 const popupImage = document.getElementById('popup-image');
 const closeButton = document.querySelector('.close');
