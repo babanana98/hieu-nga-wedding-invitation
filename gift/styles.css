@@ -87,10 +87,14 @@ main {
   text-align: center;
 }
 /* QRcode Styles */
+.gift-box-container {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
 .gift-box {
   position: relative;
   width: 300px;
-  height: 340px;
   display: flex;
   justify-content: center;
   align-items: flex-start;
@@ -114,7 +118,7 @@ main {
   top: 20px;
 }
 .box {
-  padding: 50px 0;
+  padding: 50px 0 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -132,12 +136,48 @@ main {
   border: 3px solid #fff;
   border-radius: 10px;
 }
+.copy-button {
+  cursor: pointer;
+  width: var(--font-s3-sp);
+  height: var(--font-s3-sp);
+  fill: #8D311C;
+  border-radius: 2px;
+}
+.copy-button:hover {
+  background-color: #e2806a;
+}
+
+/* Toast */
+.toast {
+  visibility: hidden;
+  min-width: 200px;
+  background-color: #999;
+  color: #fff;
+  text-align: center;
+  border-radius: 5px;
+  padding: 10px;
+  position: fixed;
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1001;
+  font-size: 1rem;
+  opacity: 0;
+  transition: opacity 0.5s, visibility 0.5s;
+}
+.toast.show {
+  visibility: visible;
+  opacity: 1;
+}
 
 /* Tablet styles */
 @media (min-width: 601px) {
   .agenda {
     text-align: center;
     padding: 0 200px;
+  }
+  .gift-box-container {
+    flex-direction: row;
   }
 }
 
@@ -170,5 +210,9 @@ main {
   }
   .time-item.right {
     font-size: var(--font-s3-pc);
+  }
+  .copy-button {
+    width: var(--font-s3-pc);
+    height: var(--font-s3-pc);
   }
 }

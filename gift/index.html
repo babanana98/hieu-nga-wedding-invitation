@@ -23,6 +23,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Piazzolla:ital,opsz,wght@0,8..30,100..900;1,8..30,100..900&display=swap" rel="stylesheet">
   </head>
   <body>
+    <div id="toast" class="toast"></div>
+
     <header>
       <a href="../" class="header--invitation-link font-size__s3" id="invitationLink">&#9001; Thiệp Mời</a>
       <a href="../album/" class="header--invitation-link font-size__s3" id="albumLink">Ảnh Cưới</a>
@@ -33,16 +35,55 @@
         <h2 class="font-size__s2 page-title--font">QUÀ CƯỚI CHO ĐÔI UYÊN ƯƠNG</h2>
         <h1 class="font-size__s1 font-family__pinyon-script page-title--font">Hoàng Hiểu ❤ Nga Trần</h1>
       </div>
-      <div class="gift-box">
-        <div class="lid"></div>
-        <div class="box">
-          <div class="qr-code-container">
-            <p class="font-family__piazzolla font-size__s3">Quét mã QR để gửi tiền mừng!</p>
-            <img src="images/hop-qua-mung-cuoi-hieu-nga.png" alt="hop-qua-mung-cuoi-hieu-nga" class="qr-code">
+
+      <div class="gift-box-container">
+        <div class="gift-box">
+          <div class="lid"></div>
+          <div class="box">
+            <div class="qr-code-container">
+              <p class="font-family__piazzolla font-size__s3">
+                HOÀNG VĂN HIỂU<br/>
+                STK: <strong id="groomNum">101003534310</strong>
+                <svg 
+                  class="copy-button"
+                  onclick="copyText('groomNum')"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 448 512"
+                >
+                  <path d="M384 336l-192 0c-8.8 0-16-7.2-16-16l0-256c0-8.8 7.2-16 16-16l140.1 0L400 115.9 400 320c0 8.8-7.2 16-16 16zM192 384l192 0c35.3 0 64-28.7 64-64l0-204.1c0-12.7-5.1-24.9-14.1-33.9L366.1 14.1c-9-9-21.2-14.1-33.9-14.1L192 0c-35.3 0-64 28.7-64 64l0 256c0 35.3 28.7 64 64 64zM64 128c-35.3 0-64 28.7-64 64L0 448c0 35.3 28.7 64 64 64l192 0c35.3 0 64-28.7 64-64l0-32-48 0 0 32c0 8.8-7.2 16-16 16L64 464c-8.8 0-16-7.2-16-16l0-256c0-8.8 7.2-16 16-16l32 0 0-48-32 0z"/>
+                </svg>
+                <br/>VietinBank CN HAI BA TRUNG
+              </p>
+              <img src="images/groom-num.jpg" alt="hop-qua-mung-cuoi-hieu-nga" class="qr-code">
+            </div>
           </div>
+          <div class="ribbon"></div>
         </div>
-        <div class="ribbon"></div>
+  
+        <div class="gift-box">
+          <div class="lid"></div>
+          <div class="box">
+            <div class="qr-code-container">
+              <p class="font-family__piazzolla font-size__s3">
+                TRẦN THỊ NGA<br/>
+                STK: <strong id="brideNum">105868959763</strong>
+                <svg 
+                  class="copy-button"
+                  onclick="copyText('brideNum')"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 448 512"
+                >
+                  <path d="M384 336l-192 0c-8.8 0-16-7.2-16-16l0-256c0-8.8 7.2-16 16-16l140.1 0L400 115.9 400 320c0 8.8-7.2 16-16 16zM192 384l192 0c35.3 0 64-28.7 64-64l0-204.1c0-12.7-5.1-24.9-14.1-33.9L366.1 14.1c-9-9-21.2-14.1-33.9-14.1L192 0c-35.3 0-64 28.7-64 64l0 256c0 35.3 28.7 64 64 64zM64 128c-35.3 0-64 28.7-64 64L0 448c0 35.3 28.7 64 64 64l192 0c35.3 0 64-28.7 64-64l0-32-48 0 0 32c0 8.8-7.2 16-16 16L64 464c-8.8 0-16-7.2-16-16l0-256c0-8.8 7.2-16 16-16l32 0 0-48-32 0z"/>
+                </svg>
+                <br/>VietinBank CN HAI BA TRUNG
+              </p>
+              <img src="images/bride-num.jpg" alt="hop-qua-mung-cuoi-hieu-nga" class="qr-code">
+            </div>
+          </div>
+          <div class="ribbon"></div>
+        </div>
       </div>
+
       <div>
         <p class="font-size__s3 page-title--font">✿✿✿✿✿</p>
         <h6 class="font-size__s1 font-family__pinyon-script page-title--font">Save The Date</h6>
