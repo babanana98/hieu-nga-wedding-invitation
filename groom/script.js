@@ -27,7 +27,7 @@ window.onload = function () {
   }
 
   // setting album link
-  albumLinkElement.href = "album/?" + "role=" + guestRole + "&guest=" + guestName;
+  albumLinkElement.href = "../album/?" + "role=" + guestRole + "&guest=" + guestName;
 };
 
 function handelSubmit(agree) {
