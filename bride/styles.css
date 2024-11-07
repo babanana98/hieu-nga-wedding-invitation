@@ -105,6 +105,9 @@ body {
   flex-direction: column;
   padding: 10px 15px;
 }
+.btn-primary:hover {
+  background-color: #c04226;
+}
 
 /* styling footer*/
 .footer {
