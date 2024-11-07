@@ -40,6 +40,7 @@ body {
   align-items: center;
   height: 100vh;
   position: relative;
+  box-sizing: border-box;
 }
 .background {
   position: absolute;
@@ -98,61 +99,11 @@ body {
   color: #8D311C;
 }
 
-/* styling message*/
-.hidden-message {
-  display: none;
-}
-.processing-message {
-  display: block;
-  color: #666;
-  font-size: small;
-}
-.success-message {
-  display: block;
-  color: #8D311C;
-  font-family: var(--font-family__piazzolla);
-  font-size: var(--font-s3-sp);
-  font-weight: 600;
-}
-.warning-message {
-  display: block;
-  color: #cc7a00;
-  font-family: var(--font-family__piazzolla);
-  font-size: var(--font-s3-sp);
-  font-weight: 600;
-}
-
-/* styling submit button*/
-.hidden-button {
-  display: none;
-}
-.display-button {
+/* styling congratulation button*/
+.wish-button-wrapper {
   display: flex;
   flex-direction: column;
-  gap: 10px;
   padding: 10px 15px;
-}
-.rsvp-button {
-  padding: 10px 20px;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  cursor: pointer;
-}
-.rsvp-button.accept {
-  background-color: #8D311C;;
-  color: white;
-}
-.rsvp-button.accept:hover {
-  background-color: #d5492a;
-}
-.rsvp-button.decline {
-  background-color: #808080;
-  color: white;
-}
-.rsvp-button.decline:hover {
-  background-color: #b3b3b3;
 }
 
 /* styling footer*/
@@ -236,12 +187,110 @@ svg.flakes {
   left: 90%;
   animation-delay: 4s, 2s;
 }
+/* Congratulations modle */
+.btn-primary {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+  background-color: #8D311C;;
+  color: white;
+}
+.btn-primary:disabled {
+  background-color: #999;
+  cursor: not-allowed;
+}
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  justify-content: center;
+  align-items: center;
+}
+.modal-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 600px;
+  text-align: left;
+  position: relative;
+}
+.modal-content h2 {
+  color: #8D311C;
+}
+.close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 30px;
+  cursor: pointer;
+}
+.modal-content textarea {
+  width: 94%;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  resize: none;
+}
+.radio-group {
+  margin: 20px 0;
+}
+.radio-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+.radio-group p {
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+/* Toast */
+.toast {
+  visibility: hidden;
+  width: max-content;
+  background-color: #999;
+  color: #fff;
+  text-align: center;
+  border-radius: 5px;
+  padding: 10px 20px;
+  position: fixed;
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1001;
+  opacity: 0;
+  transition: opacity 0.5s, visibility 0.5s;
+}
+.toast.show-success {
+  visibility: visible;
+  opacity: 1;
+  background-color: #4CAF50;
+}
+.toast.show-error {
+  visibility: visible;
+  opacity: 1;
+  background-color: #F44336;
+}
+.toast.show-info {
+  visibility: visible;
+  opacity: 1;
+  background-color: #2196F3;
+}
 
 /* Tablet styles */
 @media (min-width: 601px) {
   .container {
     padding: 15px;
-    max-width: 600px;
+    width: 40%;
+    max-width: 460px;
   }
 }
 
