@@ -18,6 +18,44 @@
   </head>
   <body>
     <div class="background"></div>
+    <div id="toast" class="toast font-family__piazzolla"></div>
+
+    <div id="wishModal" class="modal" onclick="closeModal(event)">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal(event)">&times;</span>
+        <h2 class="font-family__piazzolla font-size__s1">Gửi lời chúc đến cô dâu và chú rể</h2>
+        <div id="wishForm" class="font-family__piazzolla">
+          <label for="wishMessage">
+            <strong>Lời chúc của <em id="guestNameWish"></em>:</strong>
+            <textarea
+              id="wishMessage"
+              rows="4"
+              maxlength="1000"
+              placeholder="Viết lời chúc..."
+              required
+              class="font-family__piazzolla"
+            ></textarea>
+          </label>
+
+          <div class="radio-group">
+              <p>Rất mong <em id="guestNameOption">quý khách</em> sẽ đến chung vui với hai <em id="guestRoleOption">chúng tôi</em> trong ngày đặc biệt này!</p>
+              <label><input type="radio" name="attendance" value="yes"> Tất nhiên rồi, không thể bỏ lỡ đâu!</label>
+              <label><input type="radio" name="attendance" value="no"> Hơi tiếc, nhưng hứa sẽ cập nhật qua ảnh cưới nhé!</label>
+          </div>
+
+          <button
+            type="submit"
+            id="submitWish"
+            class="btn-primary"
+            disabled
+            onclick="handelSubmit()"
+          >
+            Gửi lời chúc
+          </button>
+        </div>
+      </div>
+    </div>
+
     <div>
       <div class="snowing">
         <svg
@@ -217,10 +255,8 @@
       <section class="confirmation">
         <p class="font-family__pinyon-script confirmation--normal font-size__s2">Rất hân hạnh được đón tiếp!</p>
         <p class="confirmation--normal confirmation--flower font-size__s3">✿✿✿✿✿</p>
-        <p id="fetchingStatus" class="hidden-message">Đang xử lý...</p>
-        <div id="submitButtons" class="hidden-button">
-          <button onclick="handelSubmit(false)" class="rsvp-button decline font-size__body">Thật tiếc! Tôi không thể tham dự</button>
-          <button onclick="handelSubmit(true)" class="rsvp-button accept font-size__body">Tôi sẽ tham dự</button>
+        <div id="submitButtons" class="wish-button-wrapper">
+          <button id="wishButton" class="btn-primary font-size__body" onclick="openModal()">Gửi lời chúc</button>
         </div>
       </section>
       <section class="footer">
