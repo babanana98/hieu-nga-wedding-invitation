@@ -1,0 +1,223 @@
+:root {
+  --font-s1-pc: 31.25px;
+  --font-s2-pc: 25px;
+  --font-s3-pc: 20px;
+  --font-body-pc: 16px;
+  --font-s1-sp: 25.39px;
+  --font-s2-sp: 20.31px;
+  --font-s3-sp: 16.25px;
+  --font-body-sp: 13px;
+  --font-family__pinyon-script: "Pinyon Script";
+  --font-family__piazzolla: "Piazzolla";
+  --font-color-primary: #8D311C;
+  --font-color-second: #e9a695;
+}
+.font-family__pinyon-script {
+  font-family: var(--font-family__pinyon-script);
+}
+.font-family__piazzolla {
+  font-family: var(--font-family__piazzolla);
+}
+.font-size__s1 {
+  font-size: var(--font-s1-sp);
+}
+.font-size__s2 {
+  font-size: var(--font-s2-sp);
+}
+.font-size__s3 {
+  font-size: var(--font-s3-sp);
+}
+.font-size__body {
+  font-size: var(--font-body-sp);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: #f9f9f9;
+}
+
+/* Page title Styles */
+.page-title {
+  text-align: center;
+  padding: 30px 10px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.page-title--font {
+  margin: 0;
+  color: #8D311C;
+}
+.page-title .back-button {
+  text-decoration: none;
+  font-size: 40px;
+  color: var(--font-color-second);
+  position: absolute;
+  top: 0;
+  right: 14px;
+}
+
+/* time line style */
+.timeline-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.timeline {
+  position: relative;
+  transition: all 0.3s;
+  width: 100%;
+  padding: 10px;
+}
+.timeline::before {
+  content: "";
+  width: 3px;
+  height: 100%;
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translate(-50%, 0);
+  background-color: var(--font-color-second);
+  z-index: 1;
+}
+.timeline .timeline-item {
+  margin-bottom: 10px;
+  position: relative;
+  display: flex;
+  opacity: 0;
+  transform: translateX(0);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  z-index: 2;
+}
+.timeline-item.left {
+  transform: translateX(-50px);
+  text-align: left;
+}
+.timeline-item.right {
+  transform: translateX(50px);
+  text-align: right;
+}
+.timeline .timeline-item .timeline-icon {
+  width: 44px;
+  height: 44px;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
+  border-radius: 50%;
+  border: var(--font-color-second) solid 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+  background-color: #fff;
+}
+.timeline .timeline-item .timeline-icon img {
+  width: 60%;
+}
+.timeline .timeline-item .timeline-content {
+  width: 42%;
+  position: relative;
+  border-radius: 5px;
+  box-shadow: 0 3px 0 rgba(0, 0, 0, 0.1);
+  transition: all 0.3s;
+}
+.timeline .timeline-item .timeline-content::before {
+  content: '';
+  position: absolute;
+  top: 14px;
+  right: -5px;
+  width: 16px;
+  height: 16px;
+  display: block;
+  border-radius: 3px;
+  transform: rotate(45deg);
+  background-color: var(--font-color-second);
+}
+.timeline .timeline-item .timeline-content h2 {
+  padding: 10px;
+  font-weight: 500;
+  border-radius: 5px 5px 0 0;
+  background-color: var(--font-color-second);
+}
+.timeline .timeline-item .timeline-content p {
+  padding: 10px;
+}
+.timeline .timeline-item.right {
+  flex-direction: row-reverse;
+}
+.timeline .timeline-item.right .timeline-content::before {
+  left: -5px;
+}
+.footer {
+  text-align: center;
+  color: var(--font-color-primary);
+  padding: 20px;
+}
+.timeline-item:nth-child(n) {
+  animation: fadeIn 0.6s ease forwards 0.2s;
+}
+.timeline-item:nth-child(2) {
+  animation: fadeIn 0.6s ease forwards 0.4s;
+}
+.timeline-item:nth-child(3) {
+  animation: fadeIn 0.6s ease forwards 0.6s;
+}
+.timeline-item:nth-child(4) {
+  animation: fadeIn 0.6s ease forwards 0.8s;
+}
+.timeline-item:nth-child(5) {
+  animation: fadeIn 0.6s ease forwards 1s;
+}
+.timeline-item:nth-child(6) {
+  animation: fadeIn 0.6s ease forwards 1.2s;
+}
+.timeline-item:nth-child(7) {
+  animation: fadeIn 0.6s ease forwards 1.4s;
+}
+.timeline-item:nth-child(8) {
+  animation: fadeIn 0.6s ease forwards 1.6s;
+}
+.timeline-item:nth-child(9) {
+  animation: fadeIn 0.6s ease forwards 1.8s;
+}
+.timeline-item:nth-child(10) {
+  animation: fadeIn 0.6s ease forwards 2s;
+}
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Tablet styles */
+@media (min-width: 601px) {
+  .timeline {
+    width: 70%;
+  }
+}
+
+/* PC styles */
+@media (min-width: 1201px) {
+  .font-size__s1 {
+    font-size: var(--font-s1-pc);
+  }
+  .font-size__s2 {
+    font-size: var(--font-s2-pc);
+  }
+  .font-size__s3 {
+    font-size: var(--font-s3-pc);
+  }
+  .font-size__body {
+    font-size: var(--font-body-pc);
+  }
+
+  .timeline {
+    width: 50%;
+  }
+}
