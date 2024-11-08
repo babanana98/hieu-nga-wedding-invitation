@@ -4,6 +4,7 @@
 const MAX_SCALE = 3;
 const GUEST_NAME_QUERY_PARAM = "guest";
 const GUEST_ROLE_QUERY_PARAM = "role";
+const HISTORY_QUERY_PARAM = "history";
 
 // JavaScript for handling image popup, zoom, and drag
 const galleryImages = document.querySelectorAll('.card-image');
@@ -11,14 +12,14 @@ const imagePopup = document.getElementById('image-popup');
 const popupImage = document.getElementById('popup-image');
 const closeButton = document.querySelector('.close');
 const invitationLinkElement = document.getElementById('invitationLink');
-const giftLinkElement = document.getElementById('giftLink');
 
 window.onload = function () {
     // setting album link
     const guestName = getRequiredQueryParamOrElse(GUEST_NAME_QUERY_PARAM, "Quý khách");
     const guestRole = getRequiredQueryParamOrElse(GUEST_ROLE_QUERY_PARAM, "chúng tôi");
-    invitationLinkElement.href = invitationLinkElement.href + "?" + "role=" + guestRole + "&guest=" + guestName;
-    giftLinkElement.href = giftLinkElement.href + "?" + "role=" + guestRole + "&guest=" + guestName;
+    const history = getRequiredQueryParamOrElse(HISTORY_QUERY_PARAM, "../");
+
+    setInvitationLink(history, guestName, guestRole);
 };
 
 // Open popup on image click
@@ -200,4 +201,17 @@ function getRequiredQueryParamOrElse(param, defaultVal) {
       return urlValue;
     }
     return defaultVal;
+}
+
+function setInvitationLink(history, guestName, guestRole) {
+  switch(history) {
+    case "groom":
+      invitationLinkElement.href = `../groom/?role=${guestRole}&guest=${guestName}`;
+      break;
+    case "bride":
+      invitationLinkElement.href = `../bride/?role=${guestRole}&guest=${guestName}`;
+      break;
+    default:
+      invitationLinkElement.href = `../?role=${guestRole}&guest=${guestName}`;
+  }
 }
