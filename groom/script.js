@@ -2,6 +2,7 @@
 
 const GUEST_NAME_QUERY_PARAM = "guest";
 const GUEST_ROLE_QUERY_PARAM = "role";
+const HISTORY = "groom";
 const ToastType = Object.freeze({
   SUCCESS: "show-success",
   ERROR: "show-error",
@@ -10,7 +11,6 @@ const ToastType = Object.freeze({
 
 const guestNameElement = document.getElementById("guestName");
 const guestRoleElement = document.getElementById("guestRole");
-const albumLinkElement = document.getElementById("albumLink");
 const closeIcon = document.querySelector(".close");
 const wishModal = document.getElementById("wishModal");
 const wishMessage = document.getElementById("wishMessage");
@@ -20,6 +20,8 @@ const guestNameWish = document.getElementById("guestNameWish");
 const guestNameOption = document.getElementById("guestNameOption");
 const guestRoleOption = document.getElementById("guestRoleOption");
 const wishButton = document.getElementById("wishButton");
+const giftLinkElement = document.getElementById('giftLink');
+const albumLinkElement = document.getElementById("albumLink");
 
 const guestName = getRequiredQueryParamOrElse(GUEST_NAME_QUERY_PARAM, "Quý khách");
 const guestRole = getRequiredQueryParamOrElse(GUEST_ROLE_QUERY_PARAM, "chúng tôi");
@@ -41,7 +43,8 @@ window.onload = function () {
   }
 
   // setting album link
-  albumLinkElement.href = "../album/?" + "role=" + guestRole + "&guest=" + guestName;
+  giftLinkElement.href = "../gift/?" + "role=" + guestRole + "&guest=" + guestName + "&history=" + HISTORY;
+  albumLinkElement.href = "../album/?" + "role=" + guestRole + "&guest=" + guestName + "&history=" + HISTORY;
 
   // Lắng nghe sự thay đổi trong textarea và radio button
   wishMessage.addEventListener("input", checkFormValidity);
