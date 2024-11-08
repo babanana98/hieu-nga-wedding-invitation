@@ -102,11 +102,44 @@ body {
 /* styling congratulation button*/
 .wish-button-wrapper {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   padding: 10px 15px;
+  gap: 10px;
+}
+.btn-primary {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+  background-color: #c04226;;
+  color: white;
+  flex-grow: 1;
+}
+.btn-primary:disabled {
+  background-color: #f4a07d;
+  cursor: not-allowed;
 }
 .btn-primary:hover {
-  background-color: #c04226;
+  background-color: #f4a07d;
+}
+.btn-second {
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+  background-color: inherit;
+  padding: 4px;
+  border: #8c8c8c solid 1px;
+}
+.btn-second:hover {
+  background-color: #8c8c8c;
+}
+.btn-second .button-icon {
+  width: 24px;
+  height: 24px;
 }
 
 /* styling footer*/
@@ -191,20 +224,6 @@ svg.flakes {
   animation-delay: 4s, 2s;
 }
 /* Congratulations modle */
-.btn-primary {
-  padding: 10px 20px;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  cursor: pointer;
-  background-color: #8D311C;;
-  color: white;
-}
-.btn-primary:disabled {
-  background-color: #999;
-  cursor: not-allowed;
-}
 .modal {
   display: none;
   position: fixed;
