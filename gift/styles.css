@@ -61,11 +61,6 @@ header {
   display: inline-block;
   font-weight: 600;
 }
-.header--invitation-link__selected {
-  background-color: #8D311C;
-  color: #fff;
-  border-radius: 6px 6px 0 0;
-}
 /* Page content styles */
 main {
   display: flex;
@@ -95,7 +90,7 @@ main {
 .gift-box {
   position: relative;
   width: 300px;
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: flex-start;
   background-color: #f2c9bf;
@@ -145,6 +140,9 @@ main {
 }
 .copy-button:hover {
   background-color: #e2806a;
+}
+.display-gift-box {
+  display: flex;
 }
 
 /* Toast */
