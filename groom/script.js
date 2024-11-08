@@ -22,6 +22,7 @@ const guestRoleOption = document.getElementById("guestRoleOption");
 const wishButton = document.getElementById("wishButton");
 const giftLinkElement = document.getElementById('giftLink');
 const albumLinkElement = document.getElementById("albumLink");
+const timelineLinkElement = document.getElementById("timelineLink");
 
 const guestName = getRequiredQueryParamOrElse(GUEST_NAME_QUERY_PARAM, "Quý khách");
 const guestRole = getRequiredQueryParamOrElse(GUEST_ROLE_QUERY_PARAM, "chúng tôi");
@@ -45,6 +46,7 @@ window.onload = function () {
   // setting album link
   giftLinkElement.href = "../gift/?" + "role=" + guestRole + "&guest=" + guestName + "&history=" + HISTORY;
   albumLinkElement.href = "../album/?" + "role=" + guestRole + "&guest=" + guestName + "&history=" + HISTORY;
+  timelineLinkElement.href = "timeline/?" + "role=" + guestRole + "&guest=" + guestName + "&history=" + HISTORY;
 
   // Lắng nghe sự thay đổi trong textarea và radio button
   wishMessage.addEventListener("input", checkFormValidity);
