@@ -39,6 +39,26 @@ body {
   background-color: #f9f9f9;
 }
 
+/* Header Styles */
+header {
+  position: sticky;
+  top: 0;
+  padding: 0 20px;
+  border-bottom: 1px solid #8D311C;;
+  background-color: #fff;
+  display: flex;
+  flex-direction: row;
+  gap: 4px;
+  z-index: 1000;
+}
+.header--invitation-link {
+  color: #8D311C;
+  text-decoration: none;
+  padding: 10px 6px;
+  display: inline-block;
+  font-weight: 600;
+}
+
 /* Page title Styles */
 .page-title {
   text-align: center;
@@ -50,14 +70,6 @@ body {
 .page-title--font {
   margin: 0;
   color: #8D311C;
-}
-.page-title .back-button {
-  text-decoration: none;
-  font-size: 40px;
-  color: var(--font-color-second);
-  position: absolute;
-  top: 0;
-  right: 14px;
 }
 
 /* time line style */
